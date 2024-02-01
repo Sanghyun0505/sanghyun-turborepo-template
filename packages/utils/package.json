@@ -5,6 +5,8 @@
   "types": "./index.ts",
   "license": "ISC",
   "devDependencies": {
+    "@sanghyun/eslint-config": "workspace:*",
+    "@sanghyun/typescript-config": "workspace:*",
     "typescript": "^5.3.3"
   },
   "dependencies": {
