@@ -1,9 +1,12 @@
-"use client";
-
-import { StyledProvider, PropsWithChildren } from "@sanghyun/core";
+import { GlobalStyle, PropsWithChildren } from "@sanghyun/core";
 
 const Provider = ({ children }: PropsWithChildren) => {
-  return <StyledProvider>{children}</StyledProvider>;
+  return (
+    <>
+      <GlobalStyle />
+      {children}
+    </>
+  );
 };
 
 export default Provider;
