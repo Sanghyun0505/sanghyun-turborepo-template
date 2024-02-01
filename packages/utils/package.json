@@ -1,0 +1,13 @@
+{
+  "name": "@sanghyun/utils",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "react-query": "^3.39.3"
+  }
+}
