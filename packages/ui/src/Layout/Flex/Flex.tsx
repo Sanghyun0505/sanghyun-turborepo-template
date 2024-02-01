@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 type Align = "center" | "flex-start" | "flex-end";
 
@@ -36,6 +36,7 @@ const base = styled.div<ContainerProps>`
 export const Column = styled(base)`
   flex-direction: column;
 `;
+
 export const Row = styled(base)`
   flex-direction: row;
 `;

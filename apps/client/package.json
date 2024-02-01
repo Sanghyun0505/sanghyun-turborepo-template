@@ -13,14 +13,16 @@
     "react": "^18",
     "react-dom": "^18",
     "react-query": "^3.39.3",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0"
   },
   "devDependencies": {
     "@sanghyun/core": "workspace:*",
     "@sanghyun/eslint-config": "workspace:*",
-    "@sanghyun/utils": "workspace:*",
     "@sanghyun/typescript-config": "workspace:*",
     "@sanghyun/ui": "workspace:*",
+    "@sanghyun/utils": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
