@@ -1,5 +1,5 @@
 {
-  "name": "sanghyun-monorepo",
+  "name": "sanghyun-turborepo-template",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -12,6 +12,7 @@
     "@sanghyun/eslint-config": "workspace:*",
     "@sanghyun/typescript-config": "workspace:*",
     "husky": "^9.0.7",
+    "lint-staged": "^15.2.1",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
