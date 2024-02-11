@@ -1,25 +1,13 @@
-import { Global, css } from "@emotion/react";
-import { reset } from "./reset";
-import { font } from "./font";
-
-const global = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Pretendard-Regular" !important;
-  }
-`;
+import { Global } from "@emotion/react";
+import { font, global, reset } from "./style";
 
 export const GlobalStyle = () => {
+  const STYLE_ITEMS = [font, global, reset];
   return (
     <>
-      <Global styles={global} />
-      <Global styles={reset} />
-      <Global styles={font} />
+      {STYLE_ITEMS.map((item, idx) => (
+        <Global key={idx} styles={item} />
+      ))}
     </>
   );
 };
