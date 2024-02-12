@@ -1,42 +1,43 @@
 import styled from "@emotion/styled";
 
-type Align = "center" | "flex-start" | "flex-end";
+export type Align = "center" | "flex-start" | "flex-end";
 
-interface ContainerProps {
+export type FlexProps = {
   gap?: number;
   columnGap?: number;
   rowGap?: number;
   justifyContent?: Align | "space-between";
   fill?: string;
   alignItems?: Align;
-  padding?: [number, number] | [number];
+  padding?: [number] | [number, number];
   wrap?: boolean;
   backgroundColor?: string;
-}
+};
 
-const base = styled.div<ContainerProps>`
-  width: ${(props) => props.fill || "auto"};
+export const BaseFlex = styled.div<FlexProps>`
   display: flex;
 
-  gap: ${(props) => props.gap || 0}px;
-  row-gap: ${(props) => props.rowGap || 0}px;
-  column-gap: ${(props) => props.columnGap || 0}px;
+  gap: ${({ gap }) => gap || 0}px;
+  row-gap: ${({ rowGap }) => rowGap || 0}px;
+  column-gap: ${({ columnGap }) => columnGap || 0}px;
 
-  justify-content: ${(props) => props.justifyContent || "flex-start"};
-  align-items: ${(props) => props.alignItems || "flex-start"};
-  flex-wrap: ${(props) => (props.wrap ? "wrap" : "nowrap")};
+  justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
+  align-items: ${({ alignItems }) => alignItems || "flex-start"};
+  flex-wrap: ${({ wrap }) => (wrap ? "wrap" : "nowrap")};
 
-  background-color: ${(props) => props.backgroundColor || "transparent"};
-  padding: ${(props) =>
-    `${props.padding ? props.padding[0] : 0}px ${
-      props.padding ? props.padding[1] ?? props.padding[0] : 0
-    }px`};
+  width: ${({ fill }) => fill || "auto"};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor || "transparent"};
+  padding: ${({ padding }) =>
+    padding?.length === 1
+      ? `${padding[0]}px`
+      : padding && `${padding[0]}px ${padding[1]}px`};
 `;
 
-export const Column = styled(base)`
+export const Column: typeof BaseFlex = styled(BaseFlex)`
   flex-direction: column;
 `;
 
-export const Row = styled(base)`
+export const Row: typeof BaseFlex = styled(BaseFlex)`
   flex-direction: row;
 `;
